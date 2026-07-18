@@ -6516,6 +6516,9 @@ a.tax-service-card-link h4 {
   min-height: auto;
   padding: 4rem 0;
 }
+.home-page .hero-content .lead {
+  color: #000;
+}
 .home-page .section {
   padding: 3rem 0;
 }
