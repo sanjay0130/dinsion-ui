@@ -91,4 +91,16 @@ document.addEventListener('DOMContentLoaded', function () {
       card.style.transform = '';
     });
   });
+
+  // Floating WhatsApp button (bottom-right)
+  if (!document.querySelector('.whatsapp-float')) {
+    var wa = document.createElement('a');
+    wa.className = 'whatsapp-float';
+    wa.href = 'https://wa.me/447775786123';
+    wa.target = '_blank';
+    wa.rel = 'noopener noreferrer';
+    wa.setAttribute('aria-label', 'Chat with us on WhatsApp');
+    wa.innerHTML = '<i class="bi bi-whatsapp" aria-hidden="true"></i><span class="whatsapp-float-label">WhatsApp us</span>';
+    document.body.appendChild(wa);
+  }
 });
