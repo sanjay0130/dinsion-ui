@@ -5356,6 +5356,7 @@ a.tax-service-card-link h4 {
   font-size: clamp(1.41rem, 2.34vw, 2.07rem);
   margin-top: .75rem;
   margin-bottom: .65rem;
+  max-width: none;
 }
 .bk-page .section-head p {
   max-width: 62ch;
@@ -5363,11 +5364,19 @@ a.tax-service-card-link h4 {
 }
 .bk-page .section-alt { background: var(--off-white); }
 
+.bk-page .bk-intro-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
 .bk-page .bk-split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+.bk-page .bk-split-media {
+  display: flex;
+  min-height: 0;
 }
 .bk-page .bk-split h2 {
   font-size: clamp(1.55rem, 2.4vw, 2.1rem);
@@ -5378,17 +5387,25 @@ a.tax-service-card-link h4 {
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
   width: 100%;
+  height: 100%;
+  min-height: 320px;
   object-fit: cover;
+  display: block;
+}
+.bk-page .bk-split-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .bk-page .bk-checklist {
   list-style: none;
-  margin: 1.25rem 0 1.5rem;
+  margin: 1rem 0 1.25rem;
   padding: 0;
 }
 .bk-page .bk-checklist li {
   display: flex;
   gap: .7rem;
-  padding: .55rem 0;
+  padding: .45rem 0;
   font-size: .95rem;
   color: var(--text-muted);
   border-bottom: 1px solid var(--border);
@@ -5403,75 +5420,91 @@ a.tax-service-card-link h4 {
 .bk-page .bk-services {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 1.15rem;
+  align-items: stretch;
 }
 .bk-page .bk-service-card {
   background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.35rem 1.2rem;
+  height: 100%;
+  padding: 1.7rem 1.6rem;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.bk-page .bk-service-card.tax-service-card {
+  border-style: solid;
+  border-color: var(--theme-color);
+  border-top-width: 4px;
+  border-left-width: 4px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-radius: var(--radius);
 }
 .bk-page .bk-service-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow);
-  border-color: var(--secondary);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--theme-color);
 }
 .bk-page .bk-service-card .icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: rgba(var(--theme-rgb), .12);
-  color: var(--secondary);
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: var(--gradient-section);
+  color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  margin-bottom: 1.1rem;
 }
-.bk-page .bk-service-card h3 {
+.bk-page .bk-service-card h3,
+.bk-page .bk-service-card h4 {
   font-size: 1.05rem;
-  margin-bottom: .4rem;
+  margin-bottom: 0.55rem;
+  font-weight: 700;
 }
 .bk-page .bk-service-card p {
-  font-size: .88rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
   margin: 0;
 }
 
-.bk-page .section-ink-dark .process-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: .8rem;
+.bk-page #process .section-title-lg {
+  max-width: none;
 }
-.bk-page .section-ink-dark .process-card {
-  background: rgba(255, 255, 255, .06);
-  border: 1px solid rgba(255, 255, 255, .14);
-  border-radius: 14px;
-  padding: 1.15rem;
+.bk-page #process.section {
+  padding-top: 3.25rem;
+  padding-bottom: 3.25rem;
 }
-.bk-page .section-ink-dark .process-card .num {
-  color: var(--secondary);
-  font-family: var(--font-sans);
-  font-weight: 800;
-  font-size: 1.1rem;
+.bk-page .section.section-alt {
+  padding-top: 3.25rem;
+  padding-bottom: 3.25rem;
 }
-.bk-page .section-ink-dark .process-card h3 {
+
+/* Keep dark-card text visible on process section */
+.bk-page .section-ink-dark .launch-card p {
+  color: rgba(255, 255, 255, 0.65);
+}
+.bk-page .section-ink-dark .launch-card h3 {
   color: #fff;
-  font-size: .98rem;
-  margin: .4rem 0;
-}
-.bk-page .section-ink-dark .process-card p {
-  font-size: .86rem;
-  color: rgba(255, 255, 255, .7);
-  margin: 0;
 }
 
 .bk-page .bk-why {
   display: grid;
   grid-template-columns: 1.1fr .9fr;
-  gap: 3rem;
-  align-items: center;
+  gap: 2rem;
+  align-items: stretch;
+}
+.bk-page .bk-why-media {
+  display: flex;
+  min-height: 0;
+}
+.bk-page .bk-why-media .bk-split-img {
+  min-height: 280px;
+}
+.bk-page .bk-why-section {
+  padding-bottom: 1.5rem;
+}
+.bk-page .bk-faq-section {
+  padding-top: 1.5rem;
 }
 .bk-page .bk-why h2 {
   font-size: clamp(1.55rem, 2.4vw, 2.15rem);
