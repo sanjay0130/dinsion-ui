@@ -2614,46 +2614,44 @@ a.tax-service-card-link h4 {
 .budget-approach {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--white);
+  gap: 1.15rem;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+  background: transparent;
+  align-items: stretch;
 }
 .budget-approach .step {
-  padding: 1.75rem 1.5rem;
-  border-right: 1px solid var(--border);
+  padding: 1.7rem 1.6rem;
+  border-right: none;
+  height: 100%;
+  background: var(--white);
 }
 .budget-approach .step:last-child { border-right: none; }
-.budget-approach .tag {
-  font-size: 0.72rem;
-  color: var(--secondary);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-weight: 700;
-}
+.budget-approach .tag { display: none; }
 .budget-approach h4 {
   font-size: 1.05rem;
-  margin-top: 0.65rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0.55rem;
   font-weight: 700;
 }
 .budget-approach p {
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
   margin: 0;
   line-height: 1.55;
 }
 
-.budget-group { margin-bottom: 3.5rem; }
+.budget-group { margin-bottom: 2.25rem; }
 .budget-group:last-child { margin-bottom: 0; }
 .budget-group .group-title {
   display: flex;
   align-items: baseline;
   gap: 0.9rem;
-  margin-bottom: 1.35rem;
+  margin-bottom: 1.15rem;
 }
 .budget-group .group-title h3 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
   margin: 0;
 }
@@ -2674,43 +2672,71 @@ a.tax-service-card-link h4 {
 .budget-ledger-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.9rem;
+  gap: 1.15rem;
+  align-items: stretch;
 }
 .budget-ledger-card {
   background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.4rem 1.25rem;
+  padding: 1.7rem 1.6rem;
+  height: 100%;
   transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-.budget-ledger-card:hover {
-  border-color: var(--secondary);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+.budget-ledger-card.tax-service-card,
+.budget-approach .step.tax-service-card {
+  border-style: solid;
+  border-color: var(--theme-color);
+  border-top-width: 4px;
+  border-left-width: 4px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-radius: var(--radius);
 }
-.budget-ledger-card .icon {
-  width: 40px;
-  height: 40px;
+.budget-ledger-card:hover,
+.budget-approach .step.tax-service-card:hover {
+  border-color: var(--theme-color);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.budget-ledger-card .icon,
+.budget-approach .step .icon {
+  width: 46px;
+  height: 46px;
   border-radius: 10px;
-  background: rgba(var(--theme-rgb), 0.1);
-  color: var(--secondary);
+  background: var(--gradient-section);
+  color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
-  margin-bottom: 0.9rem;
+  font-size: 1.3rem;
+  margin-bottom: 1.1rem;
 }
 .budget-ledger-card h4 {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.55rem;
   line-height: 1.3;
 }
 .budget-ledger-card p {
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
   margin: 0;
   line-height: 1.55;
+}
+
+.budget-page .budget-approach-section,
+.budget-page .budget-services-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.budget-page .section-title-lg {
+  max-width: none;
+}
+.budget-page .section-head {
+  margin-bottom: 2rem;
+}
+.budget-page #faq.section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .budget-pull {
@@ -2840,9 +2866,6 @@ a.tax-service-card-link h4 {
 }
 @media (max-width: 991px) {
   .budget-approach { grid-template-columns: 1fr 1fr; }
-  .budget-approach .step:nth-child(2) { border-right: none; }
-  .budget-approach .step:nth-child(1),
-  .budget-approach .step:nth-child(2) { border-bottom: 1px solid var(--border); }
   .budget-pull { grid-template-columns: 1fr; padding: 2.5rem 1.75rem; }
   .pull-figs {
     border-left: none;
@@ -2870,11 +2893,6 @@ a.tax-service-card-link h4 {
 }
 @media (max-width: 600px) {
   .budget-approach { grid-template-columns: 1fr; }
-  .budget-approach .step {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-  .budget-approach .step:last-child { border-bottom: none; }
   .budget-ledger-grid { grid-template-columns: 1fr; }
   .budget-hero h1 { max-width: none; }
 }
@@ -3128,15 +3146,24 @@ a.tax-service-card-link h4 {
 }
 
 .contact-panel-head {
-  max-width: 640px;
-  margin-bottom: 1.25rem;
+  max-width: none;
+  margin-bottom: 2rem;
 }
 .contact-panel-head .section-sub {
   margin-bottom: 0;
 }
+.contact-page .section-title-lg { max-width: none; }
+.contact-page .section-head { margin-bottom: 2rem; }
+.contact-page .contact-form-section,
+.contact-page .contact-reach-section,
+.contact-page .contact-faq-section,
+.contact-page .contact-map-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
 #contact-form {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .contact-layout {
@@ -3147,35 +3174,35 @@ a.tax-service-card-link h4 {
 }
 .info-card,
 .form-card {
-  background:
-    linear-gradient(165deg, rgba(255, 255, 255, 0.97) 0%, rgba(248, 249, 252, 0.98) 100%);
-  border-radius: calc(var(--radius) + 6px);
-  border: 1px solid rgba(232, 236, 244, 0.95);
-  box-shadow:
-    0 10px 40px rgba(var(--theme-rgb), 0.06),
-    0 4px 16px rgba(var(--theme-rgb), 0.05);
-  padding: 2rem 1.95rem 1.85rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  border-style: solid;
+  border-color: var(--theme-color);
+  border-top-width: 4px;
+  border-left-width: 4px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  box-shadow: none;
+  padding: 1.7rem 1.6rem;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .info-card:hover,
 .form-card:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 18px 48px rgba(var(--theme-rgb), 0.09),
-    0 8px 24px rgba(var(--theme-rgb), 0.08);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--theme-color);
 }
 .info-card::before,
-.form-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%);
+.form-card::before { content: none; }
+.contact-page .info-card .cat-tag,
+.contact-page .form-card .cat-tag {
+  margin-bottom: 0.35rem;
 }
+.contact-page .info-card .eyebrow,
+.contact-page .form-card .eyebrow { display: none; }
 .contact-card-glow {
   position: absolute;
   width: 220px;
@@ -3587,50 +3614,68 @@ a.tax-service-card-link h4 {
 .reach-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.85rem;
-  margin-bottom: 0.5rem;
-}
-.contact-reach-section {
-  padding-bottom: 4.5rem;
+  gap: 1.15rem;
+  align-items: stretch;
 }
 .reach-item {
   background: rgba(255, 255, 255, 0.06);
   border-style: solid;
-  border-color: rgba(255, 255, 255, 0.35);
+  border-color: rgba(var(--theme-rgb), 0.55);
   border-top-width: 4px;
   border-left-width: 4px;
   border-right-width: 2px;
   border-bottom-width: 2px;
-  border-radius: 12px;
-  padding: 1.2rem;
-  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  border-radius: 14px;
+  padding: 1.7rem 1.6rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 .reach-item:hover {
-  transform: translateY(-3px);
-  border-color: var(--secondary);
-  background: rgba(255, 255, 255, 0.09);
+  transform: translateY(-4px);
+  border-color: var(--theme-color);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-lg);
 }
-.reach-item i {
+.reach-item .cat-tag {
   color: var(--secondary);
-  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+.reach-item .icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: rgba(var(--theme-rgb), 0.18);
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 1.1rem;
 }
 .reach-item h4 {
   color: #fff;
-  margin-top: 0.75rem;
-  margin-bottom: 0.4rem;
-  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 0.55rem;
+  font-size: 1.05rem;
+  font-weight: 700;
 }
 .reach-item p {
   color: rgba(255, 255, 255, 0.72);
-  font-size: 0.87rem;
-  margin-bottom: 0.8rem;
+  font-size: 0.92rem;
+  margin-bottom: 0.9rem;
+  line-height: 1.55;
+  flex: 1;
 }
 .reach-item .go {
   color: var(--secondary);
-  font-size: 0.83rem;
+  font-size: 0.88rem;
   font-weight: 600;
+  margin-top: auto;
 }
 
+.contact-page .faq-list { max-width: none; margin: 0; }
 .faq-list { max-width: 860px; margin: 0 auto; }
 .faq-item {
   border-bottom: 1px solid var(--border);
@@ -3808,15 +3853,15 @@ a.tax-service-card-link h4 {
 .charities-page .trustbar {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
   background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 1.1rem 1.2rem; margin: 2rem 0;
+  padding: 1.1rem 1.2rem; margin: 1.25rem 0;
 }
 .charities-page .trust-item { font-size: .86rem; color: var(--text-muted); display: flex; gap: .45rem; align-items: center; }
 .charities-page .trust-item i { color: var(--secondary); }
 
-.charities-page .page-mark { display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: .75rem; margin-bottom: 2rem; }
+.charities-page .page-mark { display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: .6rem; margin-bottom: 1.25rem; }
 .charities-page .page-mark .no { font-size: .72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .07em; }
-.charities-page .intro { max-width: 63ch; margin-top: .8rem; color: var(--text-muted); }
-.charities-page .tab-bar { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1.8rem 0; }
+.charities-page .intro { max-width: none; margin-top: .65rem; color: var(--text-muted); }
+.charities-page .tab-bar { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1.25rem 0 1.4rem; }
 .charities-page .tab-btn {
   border: 1px solid var(--border); background: #fff; color: var(--text-muted);
   border-radius: 30px; padding: .55rem .95rem; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em;
@@ -3824,16 +3869,46 @@ a.tax-service-card-link h4 {
 .charities-page .tab-btn.active { background: var(--gradient-btn); color: #fff; border-color: transparent; }
 .charities-page .tab-panel { display: none; }
 .charities-page .tab-panel.active { display: grid; }
-.charities-page .service-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.charities-page .service-grid { grid-template-columns: repeat(3, 1fr); gap: 1.15rem; align-items: stretch; }
 .charities-page .service-card {
-  background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 1.4rem 1.2rem; transition: all .2s ease;
+  background: #fff;
+  padding: 1.7rem 1.6rem;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
-.charities-page .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--secondary); }
-.charities-page .service-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: .45rem; }
-.charities-page .service-card p { color: var(--text-muted); font-size: .9rem; margin: 0; }
+.charities-page .service-card.tax-service-card,
+.charities-page .step.tax-service-card {
+  border-style: solid;
+  border-color: var(--theme-color);
+  border-top-width: 4px;
+  border-left-width: 4px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-radius: var(--radius);
+}
+.charities-page .service-card:hover,
+.charities-page .step.tax-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--theme-color);
+}
+.charities-page .service-card .icon,
+.charities-page .step .icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: var(--gradient-section);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 1.1rem;
+}
+.charities-page .service-card h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: .55rem; }
+.charities-page .service-card p { color: var(--text-muted); font-size: .92rem; margin: 0; line-height: 1.55; }
 
-.charities-page .fund-ledger { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem; }
+.charities-page .fund-ledger { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem; margin-top: 1.5rem; }
 .charities-page .fl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem; }
 .charities-page .fl-col { border: 1px dashed var(--border); border-radius: 10px; padding: 1rem; text-align: center; }
 .charities-page .fl-col h5 { font-size: .76rem; letter-spacing: .07em; text-transform: uppercase; margin-bottom: .2rem; }
@@ -3846,7 +3921,7 @@ a.tax-service-card-link h4 {
 .charities-page .fl-note { color: var(--text-muted); font-size: .8rem; margin-top: .45rem; }
 .charities-page .caption { text-align: center; color: var(--text-muted); font-size: .8rem; margin-top: .9rem; }
 
-.charities-page .checker { background: var(--text); color: #fff; border-radius: var(--radius); padding: 1.8rem; }
+.charities-page .checker { background: var(--text); color: #fff; border-radius: var(--radius); padding: 1.8rem; margin-top: 1.5rem; }
 .charities-page .checker h3 { color: #fff; }
 .charities-page .checker .sub { color: rgba(255,255,255,.7); }
 .charities-page .checker-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-top: 1rem; }
@@ -3861,13 +3936,26 @@ a.tax-service-card-link h4 {
 .charities-page .result-panel p { color: rgba(255,255,255,.78); font-size: .9rem; }
 .charities-page .result-panel .fine { color: rgba(255,255,255,.62); font-size: .77rem; margin-top: .8rem; }
 
-.charities-page .process { display: grid; grid-template-columns: repeat(5, 1fr); gap: .8rem; }
-.charities-page .step { border: 1px solid var(--border); border-radius: 10px; background: #fff; padding: 1rem; }
-.charities-page .step .num { color: var(--secondary); font-family: var(--font-sans); font-weight: 800; font-size: 1.15rem; margin-bottom: .35rem; }
-.charities-page .step h4 { font-size: .95rem; margin-bottom: .3rem; }
-.charities-page .step p { font-size: .84rem; color: var(--text-muted); }
+.charities-page .process { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.15rem; margin-top: 1.5rem; align-items: stretch; }
+.charities-page .step {
+  background: #fff;
+  padding: 1.7rem 1.6rem;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.charities-page .step .num { display: none; }
+.charities-page .step h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: .55rem; }
+.charities-page .step p { font-size: .92rem; color: var(--text-muted); margin: 0; line-height: 1.55; }
 
-.charities-page .faq-list { max-width: 860px; margin-top: 2rem; }
+.charities-page .charities-services-section,
+.charities-page .charities-funds-section,
+.charities-page .charities-checker-section,
+.charities-page .charities-process-section,
+.charities-page .charities-faq-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.charities-page .faq-list { max-width: none; margin-top: 1.35rem; }
 .charities-page .faq-item { border-bottom: 1px solid var(--border); }
 .charities-page .faq-q {
   width: 100%; text-align: left; border: none; background: none; padding: 1rem 0;
@@ -4809,31 +4897,21 @@ a.tax-service-card-link h4 {
 
 
 /* ========== Self Assessment page ========== */
+.sa-page .sa-dates-section,
+.sa-page .sa-why-section,
+.sa-page .sa-services-section,
+.sa-page .sa-calc-section,
+.sa-page .sa-trust-section,
+.sa-page .sa-faq-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.sa-page .section-title-lg { max-width: none; }
+.sa-page .section-head { margin-bottom: 2rem; }
 .sa-page .sa-dates-timeline {
   grid-template-columns: repeat(5, 1fr);
 }
-.sa-page .sa-dates-timeline::before {
-  background: linear-gradient(90deg, transparent, rgba(var(--theme-rgb), 0.18), rgba(var(--theme-rgb), 0.35), transparent);
-}
-.sa-page .sa-dates-timeline .launch-marker {
-  background: var(--off-white);
-  border-color: var(--border);
-}
-.sa-page .sa-dates-timeline .launch-card {
-  background: var(--white);
-  border-color: var(--border);
-  box-shadow: var(--shadow-sm);
-}
-.sa-page .sa-dates-timeline .launch-card:hover {
-  background: var(--off-white);
-}
-.sa-page .sa-dates-timeline .launch-card h3 {
-  color: var(--text);
-  font-size: 0.98rem;
-}
-.sa-page .sa-dates-timeline .launch-card p {
-  color: var(--text-muted);
-}
+.sa-page .sa-dates-timeline::before { display: none; }
 .sa-date-label {
   display: block;
   font-size: 0.72rem;
@@ -4843,6 +4921,56 @@ a.tax-service-card-link h4 {
   color: var(--secondary);
   margin-bottom: 0.35rem;
 }
+.sa-page .sa-service-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+}
+.sa-page .startup-service-card.tax-service-card {
+  border-style: solid;
+  border-color: var(--theme-color);
+  border-top-width: 4px;
+  border-left-width: 4px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-radius: var(--radius);
+  padding: 1.7rem 1.6rem;
+}
+.sa-page .startup-service-card .svc-visual,
+.sa-page .startup-service-card .svc-num,
+.sa-page .startup-service-card .svc-points { display: none; }
+.sa-page .startup-service-card .icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: var(--gradient-section);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 1.1rem;
+}
+.sa-page .startup-service-card h3,
+.sa-page .startup-service-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.55rem;
+}
+.sa-page .startup-service-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.55;
+  flex: 1;
+}
+.sa-page .sa-proof-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.15rem 1.5rem;
+}
+.sa-page .sa-calc-card { max-width: 720px; }
+.sa-page .sa-calc-disclaimer { margin-top: 0.85rem; margin-bottom: 1.5rem; }
+.sa-page .startup-faq { max-width: none; }
 
 .sa-calc-disclaimer {
   font-size: 0.82rem;
@@ -4934,19 +5062,41 @@ a.tax-service-card-link h4 {
   .sa-page .sa-dates-timeline {
     grid-template-columns: repeat(3, 1fr);
   }
-  .sa-page .sa-dates-timeline::before { display: none; }
+  .sa-page .sa-service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 991px) {
+  .sa-page .sa-proof-list { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
-  .sa-page .sa-dates-timeline {
+  .sa-page .sa-dates-timeline,
+  .sa-page .sa-service-grid {
     grid-template-columns: 1fr;
   }
   .sa-calc-card { padding: 1.5rem 1.2rem; }
 }
 
 /* ========== Making Tax Digital page ========== */
+.mtd-page .mtd-timeline-section,
+.mtd-page .mtd-calc-section,
+.mtd-page .mtd-qualify-section,
+.mtd-page .mtd-deadlines-section,
+.mtd-page .mtd-who-section,
+.mtd-page .mtd-services-section,
+.mtd-page .mtd-why-section,
+.mtd-page .mtd-faq-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.mtd-page .section-title-lg { max-width: none; }
+.mtd-page .section-head { margin-bottom: 2rem; }
 .mtd-page .mtd-timeline {
   grid-template-columns: repeat(5, 1fr);
 }
+.mtd-page .mtd-timeline::before { display: none; }
+.mtd-page .mtd-calc-card { max-width: 720px; }
+.mtd-page .sa-calc-disclaimer { margin-top: 0.85rem; margin-bottom: 1.5rem; }
 .mtd-income-display {
   font-family: var(--su-display, var(--font-sans));
   font-size: clamp(1.76rem, 3.6vw, 2.29rem);
@@ -5008,6 +5158,8 @@ a.tax-service-card-link h4 {
   border-radius: 16px;
   padding: 1.75rem 1.5rem;
   box-shadow: var(--shadow-sm);
+  margin-top: 1.5rem;
+  max-width: 720px;
 }
 .mtd-example-row {
   display: flex;
@@ -5030,34 +5182,109 @@ a.tax-service-card-link h4 {
   color: var(--text-muted);
   line-height: 1.55;
 }
+.mtd-deadline-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.15rem;
+  align-items: stretch;
+}
 .mtd-stub {
   background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.25rem 1.1rem;
+  padding: 1.7rem 1.6rem;
   height: 100%;
-  border-left: 3px solid var(--secondary);
-  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
-.mtd-stub.final {
-  border-left-color: var(--primary, #0b1220);
+.mtd-stub.tax-service-card {
+  border-style: solid;
+  border-color: var(--theme-color);
+  border-top-width: 4px;
+  border-left-width: 4px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-radius: var(--radius);
 }
-.mtd-stub strong {
-  display: block;
-  font-family: var(--su-display, var(--font-sans));
+.mtd-stub.tax-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--theme-color);
+}
+.mtd-stub .icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: var(--gradient-section);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 1.1rem;
+}
+.mtd-stub h4 {
   font-size: 1.45rem;
   font-weight: 800;
+  margin-bottom: 0.4rem;
   color: var(--text);
-  margin: 0.25rem 0 0.4rem;
 }
 .mtd-stub p {
   margin: 0;
-  font-size: 0.84rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
+  line-height: 1.55;
 }
 .mtd-fact-list {
-  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+  margin-top: 0;
 }
+.mtd-page .mtd-who-grid,
+.mtd-page .mtd-service-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+}
+.mtd-page .startup-service-card.tax-service-card {
+  border-style: solid;
+  border-color: var(--theme-color);
+  border-top-width: 4px;
+  border-left-width: 4px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-radius: var(--radius);
+  padding: 1.7rem 1.6rem;
+}
+.mtd-page .startup-service-card .svc-visual,
+.mtd-page .startup-service-card .svc-num { display: none; }
+.mtd-page .startup-service-card .icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: var(--gradient-section);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 1.1rem;
+}
+.mtd-page .startup-service-card h3,
+.mtd-page .startup-service-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.55rem;
+}
+.mtd-page .startup-service-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.55;
+}
+.mtd-page .mtd-proof-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.15rem 1.5rem;
+}
+.mtd-page .startup-faq { max-width: none; }
 .startup-service-card .svc-link {
   display: inline-flex;
   align-items: center;
@@ -5121,12 +5348,25 @@ a.tax-service-card-link h4 {
 }
 
 @media (max-width: 1100px) {
-  .mtd-page .mtd-timeline {
+  .mtd-page .mtd-timeline,
+  .mtd-page .mtd-deadline-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  .mtd-page .mtd-who-grid,
+  .mtd-page .mtd-service-grid,
+  .mtd-page .mtd-fact-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 991px) {
+  .mtd-page .mtd-proof-list { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
-  .mtd-page .mtd-timeline {
+  .mtd-page .mtd-timeline,
+  .mtd-page .mtd-deadline-grid,
+  .mtd-page .mtd-who-grid,
+  .mtd-page .mtd-service-grid,
+  .mtd-page .mtd-fact-list {
     grid-template-columns: 1fr;
   }
 }
