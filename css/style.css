@@ -1828,7 +1828,8 @@ a.tax-service-card-link h4 {
 }
 @media (prefers-reduced-motion: reduce) {
   .tax-process-curve-line,
-  .tax-process-badge::before { animation: none; }
+  .tax-process-badge::before,
+  .cycle-connect-line { animation: none; }
 }
 
 /* Process path on dark sections (start-up) — curve only; cards stay dark */
@@ -2118,19 +2119,43 @@ a.tax-service-card-link h4 {
   margin: 0 auto;
 }
 .cycle-ring {
+  display: none;
+}
+.cycle-connect {
   position: absolute;
-  inset: 14%;
-  border: 1px dashed rgba(255, 255, 255, 0.28);
-  border-radius: 50%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.cycle-connect-bg {
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+.cycle-connect-line {
+  stroke: var(--theme-color-light);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 8 10;
+  animation: taxCurveDash 18s linear infinite;
+  transform-origin: 200px 200px;
 }
 .cycle-node {
   position: absolute;
   width: 150px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  border-style: solid;
+  border-color: rgba(var(--theme-rgb), 0.55);
+  border-top-width: 4px;
+  border-left-width: 4px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
   padding: 0.85rem 1rem;
   border-radius: 12px;
   backdrop-filter: blur(8px);
+  z-index: 1;
 }
 .cycle-node .n {
   font-size: 0.7rem;
@@ -2150,6 +2175,7 @@ a.tax-service-card-link h4 {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  z-index: 1;
 }
 .cycle-center b { font-family: var(--font-sans); font-size: 0.95rem; color: #fff; display: block; }
 .cycle-center span { font-size: 0.7rem; color: rgba(255, 255, 255, 0.55); }
@@ -2209,17 +2235,25 @@ a.tax-service-card-link h4 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.25rem;
+  align-items: stretch;
 }
 .payroll-service-card {
   background: var(--white);
-  border: 1px solid var(--border);
+  border-style: solid;
+  border-color: var(--theme-color);
+  border-top-width: 4px;
+  border-left-width: 4px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
   padding: 1.6rem 1.45rem;
   border-radius: var(--radius);
   transition: 0.25s ease;
   display: none;
+  height: 100%;
+  flex-direction: column;
 }
 .payroll-service-card.show {
-  display: block;
+  display: flex;
   animation: payrollFadeIn 0.35s ease;
 }
 @keyframes payrollFadeIn {
@@ -2227,32 +2261,32 @@ a.tax-service-card-link h4 {
   to { opacity: 1; transform: translateY(0); }
 }
 .payroll-service-card:hover {
-  border-color: rgba(var(--theme-rgb), 0.45);
+  border-color: var(--theme-color);
   box-shadow: var(--shadow-lg);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 .payroll-service-card .icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
   background: var(--gradient-section);
-  border: 1px solid var(--border);
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--primary);
-  font-size: 1.05rem;
-  margin-bottom: 0.9rem;
+  font-size: 1.3rem;
+  margin-bottom: 1.1rem;
 }
-.payroll-service-card h4 { font-size: 1.05rem; margin-bottom: 0.5rem; }
-.payroll-service-card p { font-size: 0.9rem; margin: 0; color: var(--text-muted); }
+.payroll-service-card h4 { font-size: 1.05rem; margin-bottom: 0.55rem; font-weight: 700; }
+.payroll-service-card p { font-size: 0.92rem; margin: 0; color: var(--text-muted); flex: 1; }
 .payroll-service-card .cat {
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--secondary);
   display: block;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.6rem;
   font-weight: 700;
 }
 
@@ -2343,30 +2377,30 @@ a.tax-service-card-link h4 {
 .why-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
+  gap: 1.25rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
 }
 .why-item {
   background: var(--white);
-  padding: 2rem 1.6rem;
+  padding: 1.7rem 1.6rem;
+  height: 100%;
 }
-.why-item .num {
-  font-family: var(--font-sans);
-  font-style: italic;
-  font-size: 0.95rem;
-  background: var(--gradient-btn);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 0.9rem;
-  display: block;
-  font-weight: 700;
+.why-item.tax-service-card .num { display: none; }
+.why-item h4 { font-size: 1.05rem; margin-bottom: 0.55rem; }
+.why-item p { font-size: 0.92rem; margin: 0; color: var(--text-muted); }
+
+.payroll-page #cycle .section-title-lg {
+  max-width: none;
 }
-.why-item h4 { font-size: 1.05rem; margin-bottom: 0.5rem; }
-.why-item p { font-size: 0.9rem; margin: 0; color: var(--text-muted); }
+.payroll-page .payroll-trust {
+  padding: 1.25rem 0;
+}
+.payroll-page .quick-answer-band {
+  padding: 1.5rem 0;
+}
 
 .payroll-faq { max-width: 800px; margin: 0 auto; }
 .payroll-faq-item { border-bottom: 1px solid var(--border); }

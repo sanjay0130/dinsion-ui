@@ -126,7 +126,7 @@
   }
   </script>
 </head>
-<body>
+<body class="payroll-page">
 
   <div class="top-bar">
     <div class="container">
@@ -245,7 +245,10 @@ We handle the complexity, so you don't have to: <p>
       </div>
       <div class="cycle-wrap">
         <div class="cycle-diagram reveal">
-          <div class="cycle-ring"></div>
+          <svg class="cycle-connect" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <circle class="cycle-connect-bg" cx="200" cy="200" r="118" fill="none"/>
+            <circle class="cycle-connect-line" cx="200" cy="200" r="118" fill="none"/>
+          </svg>
           <div class="cycle-center"><b>Pay Day</b><span>Recurring monthly</span></div>
           <div class="cycle-node n1"><span class="n">STEP 01</span><h4>Collect hours &amp; changes</h4><p>New starters, leavers, overtime</p></div>
           <div class="cycle-node n2"><span class="n">STEP 02</span><h4>Calculate &amp; review</h4><p>PAYE, NI, pension, statutory pay</p></div>
@@ -458,10 +461,30 @@ We handle the complexity, so you don't have to: <p>
         <h2 class="section-title-lg">Payroll run by accountants, not a call centre.</h2>
       </div>
       <div class="why-grid reveal">
-        <div class="why-item"><span class="num">01</span><h4>Named payroll contact</h4><p>You deal with the same person every month, not a rotating queue.</p></div>
-        <div class="why-item"><span class="num">02</span><h4>Fixed monthly fee</h4><p>Priced per payslip with no surprise charges for statutory payments or new starters.</p></div>
-        <div class="why-item"><span class="num">03</span><h4>Connected to your accounts</h4><p>Payroll journals flow straight into your bookkeeping, so your numbers always reconcile.</p></div>
-        <div class="why-item"><span class="num">04</span><h4>ACCA regulated</h4><p>Held to professional standards of conduct, confidentiality and continuing competence.</p></div>
+        <div class="why-item tax-service-card">
+          <span class="cat-tag">Support</span>
+          <div class="icon"><i class="bi bi-person-badge"></i></div>
+          <h4>Named payroll contact</h4>
+          <p>You deal with the same person every month, not a rotating queue.</p>
+        </div>
+        <div class="why-item tax-service-card">
+          <span class="cat-tag">Pricing</span>
+          <div class="icon"><i class="bi bi-cash-stack"></i></div>
+          <h4>Fixed monthly fee</h4>
+          <p>Priced per payslip with no surprise charges for statutory payments or new starters.</p>
+        </div>
+        <div class="why-item tax-service-card">
+          <span class="cat-tag">Accounts</span>
+          <div class="icon"><i class="bi bi-link-45deg"></i></div>
+          <h4>Connected to your accounts</h4>
+          <p>Payroll journals flow straight into your bookkeeping, so your numbers always reconcile.</p>
+        </div>
+        <div class="why-item tax-service-card">
+          <span class="cat-tag">Standards</span>
+          <div class="icon"><i class="bi bi-patch-check"></i></div>
+          <h4>ACCA regulated</h4>
+          <p>Held to professional standards of conduct, confidentiality and continuing competence.</p>
+        </div>
       </div>
     </div>
   </section>
