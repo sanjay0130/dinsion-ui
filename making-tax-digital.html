@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Making Tax Digital (MTD) support from Dinson & Co. — thresholds, quarterly deadlines, software setup and HMRC-compliant submissions for VAT and Income Tax.">
+  <title>Making Tax Digital (MTD) | Dinson & Co.</title>
+  <link rel="canonical" href="https://dinson.co.uk/making-tax-digital.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="startup-page mtd-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="top-bar">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <span><i class="bi bi-telephone me-1"></i> <a href="tel:03331237860">0333 123 7860</a></span>
+          <span class="divider">|</span>
+          <span><i class="bi bi-phone me-1"></i> <a href="tel:07775786123">07775 786 123</a></span>
+          <span class="divider d-none d-sm-inline">|</span>
+          <span class="d-none d-sm-inline"><i class="bi bi-envelope me-1"></i> <a href="mailto:info@dinson.co.uk">info@dinson.co.uk</a></span>
+        </div>
+        <div class="col-md-4 text-md-end"><a href="#" class="btn-login">Log In</a></div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dinson sticky-top" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="assets/images/main_logo.png" alt="Dinson & Co. Accountants"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Services</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="start-up.html">Start-up</a></li>
+              <li><a class="dropdown-item" href="taxation.html">Taxation</a></li>
+              <li><a class="dropdown-item" href="payroll.html">Payroll</a></li>
+              <li><a class="dropdown-item" href="carbon-accounting.html">Carbon Accounting</a></li>
+              <li><a class="dropdown-item" href="book-keeping.html">Book Keeping</a></li>
+              <li><a class="dropdown-item" href="budgeting.html">Budgeting</a></li>
+              <li><a class="dropdown-item" href="charities.html">Charities</a></li>
+              <li><a class="dropdown-item" href="cis.html">CIS</a></li>
+              <li><a class="dropdown-item" href="consultancy.html">Consultancy</a></li>
+              <li><a class="dropdown-item" href="vat.html">VAT</a></li>
+              <li><a class="dropdown-item" href="self-assessment.html">Self Assessment</a></li>
+              <li><a class="dropdown-item active" href="making-tax-digital.html">Making tax digital (MTD)</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+          <li class="nav-item nav-cta d-none d-lg-block">
+            <a href="contact-us.html" class="btn btn-icm btn-icm-sm">Book a Call</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+  <!-- HERO -->
+  <header class="startup-hero">
+    <div class="startup-hero-bg" aria-hidden="true">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="grid-lines"></span>
+    </div>
+    <div class="container position-relative">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="#services">Services</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Making Tax Digital</li>
+        </ol>
+      </nav>
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <p class="brand-mark">Dinson &amp; Co.</p>
+          <span class="eyebrow">HMRC · Making Tax Digital</span>
+          <h1>Your books digitised. Your deadline sorted.</h1>
+          <p class="lead">Making Tax Digital is reshaping UK tax reporting — VAT has been digital since 2019, and Income Tax follows in stages from April 2026. We get your records, software and submissions compliant before your date arrives.</p>
+          <div class="hero-actions">
+            <a href="contact-us.html" class="btn btn-icm">Book a Free MTD Review <i class="bi bi-arrow-right"></i></a>
+            <a href="#calculator" class="btn btn-ghost">Check my threshold</a>
+          </div>
+          <div class="startup-hero-stats" aria-label="MTD highlights">
+            <div class="stat"><b>2019</b><span>MTD for VAT began</span></div>
+            <div class="stat"><b>£50k</b><span>ITSA threshold 2026</span></div>
+            <div class="stat"><b>4 pts</b><span>Before a £200 fine</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="formation-doc sa-summary-doc" aria-label="Making Tax Digital summary">
+            <div class="formation-doc-seal" aria-hidden="true">
+              <svg viewBox="0 0 80 80" width="72" height="72">
+                <circle cx="40" cy="40" r="36" fill="none" stroke="currentColor" stroke-width="2"/>
+                <circle cx="40" cy="40" r="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/>
+                <text x="40" y="38" text-anchor="middle" font-size="9" font-weight="700" fill="currentColor">DINSON</text>
+                <text x="40" y="50" text-anchor="middle" font-size="7" fill="currentColor">&amp; CO.</text>
+              </svg>
+            </div>
+            <div class="formation-doc-head">
+              <span class="doc-label">In short</span>
+              <span class="doc-status"><i class="bi bi-check-circle-fill"></i> HMRC programme</span>
+            </div>
+            <div class="formation-doc-body">
+              <div class="doc-row"><span>What</span><strong>Digital records &amp; filings</strong></div>
+              <div class="doc-row"><span>VAT</span><strong>Mandatory now</strong></div>
+              <div class="doc-row"><span>Income Tax</span><strong>Phased 2026–2028</strong></div>
+              <div class="doc-row"><span>Software</span><strong>MTD-recognised required</strong></div>
+              <div class="doc-row"><span>Final declaration</span><strong>Due 31 January</strong></div>
+            </div>
+            <div class="formation-doc-foot">
+              <span class="pulse-dot"></span> We track every quarterly date — you approve the figures
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="quick-answer-band">
+    <div class="container">
+      <p class="quick-answer"><strong>Making Tax Digital (MTD)</strong> requires digital record-keeping and quarterly submissions through HMRC-approved software. It already applies to all VAT-registered businesses, and phases in for self-employed people and landlords with qualifying income above £50,000 from April 2026, £30,000 from April 2027, and £20,000 from April 2028.</p>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section section-white" id="timeline">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">The rollout</span>
+        <h2 class="section-title-lg">Making Tax Digital, stage by stage</h2>
+        <p class="section-sub">MTD is not arriving all at once. Here is where the rules stand today, and what is coming next.</p>
+      </div>
+
+      <ol class="launch-timeline mtd-timeline">
+        <li class="launch-step reveal">
+          <span class="launch-marker"><span>01</span></span>
+          <div class="launch-card">
+            <span class="sa-date-label">April 2019</span>
+            <h3>MTD for VAT begins</h3>
+            <p>VAT-registered businesses above the threshold must keep digital VAT records and file through compatible software.</p>
+          </div>
+        </li>
+        <li class="launch-step reveal">
+          <span class="launch-marker"><span>02</span></span>
+          <div class="launch-card">
+            <span class="sa-date-label">April 2022</span>
+            <h3>MTD for VAT extends</h3>
+            <p>Every VAT-registered business must keep digital records and file through MTD software, regardless of turnover.</p>
+          </div>
+        </li>
+        <li class="launch-step reveal">
+          <span class="launch-marker"><span>03</span></span>
+          <div class="launch-card">
+            <span class="sa-date-label">April 2026</span>
+            <h3>Income Tax — £50,000+</h3>
+            <p>Self-employed people and landlords above £50,000 qualifying income send quarterly digital updates.</p>
+          </div>
+        </li>
+        <li class="launch-step reveal">
+          <span class="launch-marker"><span>04</span></span>
+          <div class="launch-card">
+            <span class="sa-date-label">April 2027</span>
+            <h3>Income Tax — £30,000+</h3>
+            <p>The mandate extends to qualifying income above £30,000, bringing more sole traders and landlords into scope.</p>
+          </div>
+        </li>
+        <li class="launch-step reveal">
+          <span class="launch-marker"><span>05</span></span>
+          <div class="launch-card">
+            <span class="sa-date-label">April 2028</span>
+            <h3>Income Tax — £20,000+</h3>
+            <p>The threshold drops to £20,000, extending digital reporting to most self-employed taxpayers.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="section section-ink-dark" id="calculator">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+        <div class="col-lg-5 reveal">
+          <span class="section-eyebrow">60-second check</span>
+          <h2 class="section-title-lg">When does MTD apply to you?</h2>
+          <p class="section-sub" style="color:rgba(255,255,255,0.72);">Move the slider to your annual qualifying income from self-employment and property. We will tell you your mandatory start date instantly.</p>
+          <p class="sa-calc-disclaimer">Based on gross qualifying income for the relevant tax year, as reported on your most recent Self Assessment return. Confirm your position with HMRC or a Dinson accountant.</p>
+        </div>
+        <div class="col-lg-7 reveal">
+          <div class="sa-calc-card mtd-calc-card">
+            <div class="sa-calc-tag show">Live check</div>
+            <label class="sa-field-label" for="incomeSlider">Annual qualifying income (self-employment + property)</label>
+            <div class="mtd-income-display"><span>£</span><span id="incomeValue">45,000</span></div>
+            <input type="range" class="mtd-slider form-range" min="0" max="90000" step="1000" value="45000" id="incomeSlider" aria-valuemin="0" aria-valuemax="90000" aria-valuenow="45000">
+            <div class="mtd-toggle" id="statusToggle" role="group" aria-label="Income type">
+              <button type="button" class="mtd-toggle-btn active" data-status="Self-employed">Self-employed</button>
+              <button type="button" class="mtd-toggle-btn" data-status="Landlord">Landlord</button>
+              <button type="button" class="mtd-toggle-btn" data-status="Both">Both</button>
+            </div>
+            <div class="sa-calc-result" id="calcResult">
+              <div class="sa-result-row"><span>Your MTD status</span><span id="resultDate">Already in scope</span></div>
+              <p class="mtd-result-text" id="resultText">At £45,000 of qualifying income, you crossed the £50,000 threshold and should already be sending quarterly digital updates to HMRC.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALIFYING INCOME -->
+  <section class="section section-gradient">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+        <div class="col-lg-5 reveal">
+          <span class="section-eyebrow">Get the definition right</span>
+          <h2 class="section-title-lg">What counts as qualifying income?</h2>
+          <p class="startup-prose">Qualifying income is your total <strong>gross</strong> income — before expenses — from self-employment and UK property combined. Multiple businesses or rental properties are added together into a single figure.</p>
+          <ul class="proof-list mtd-fact-list">
+            <li><i class="bi bi-calendar3"></i><div><strong>Basis year</strong><span>Two tax years prior</span></div></li>
+            <li><i class="bi bi-cash-stack"></i><div><strong>Measured before</strong><span>Expenses &amp; allowances</span></div></li>
+            <li><i class="bi bi-buildings"></i><div><strong>Combines</strong><span>All trades &amp; properties</span></div></li>
+          </ul>
+        </div>
+        <div class="col-lg-7 reveal">
+          <div class="mtd-example-card">
+            <span class="sa-date-label">Worked example</span>
+            <p>A freelance designer with one rental flat:</p>
+            <div class="mtd-example-row"><span>Freelance design income (gross)</span><strong>£35,000</strong></div>
+            <div class="mtd-example-row"><span>Rental income (gross)</span><strong>£20,000</strong></div>
+            <div class="mtd-example-row total"><span>Qualifying income</span><strong>£55,000</strong></div>
+            <p class="mtd-example-note">£55,000 is above the £50,000 threshold — so MTD for Income Tax has applied since April 2026, even though neither source alone reaches £50,000.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEADLINES -->
+  <section class="section section-white" id="deadlines">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Don&rsquo;t miss a date</span>
+        <h2 class="section-title-lg">Four updates a year, plus one final declaration</h2>
+        <p class="section-sub">A standard tax year runs to these deadlines. Mandated filers receive one penalty point per missed update; at 4 points HMRC issues a £200 fixed penalty.</p>
+      </div>
+      <div class="row g-3 mtd-deadline-grid">
+        <div class="col-6 col-lg reveal"><div class="mtd-stub"><span class="sa-date-label">Q1 · Apr–Jun</span><strong>7 Aug</strong><p>Update covering 6 Apr–5 Jul</p></div></div>
+        <div class="col-6 col-lg reveal"><div class="mtd-stub"><span class="sa-date-label">Q2 · Jul–Sep</span><strong>7 Nov</strong><p>Update covering 6 Jul–5 Oct</p></div></div>
+        <div class="col-6 col-lg reveal"><div class="mtd-stub"><span class="sa-date-label">Q3 · Oct–Dec</span><strong>7 Feb</strong><p>Update covering 6 Oct–5 Jan</p></div></div>
+        <div class="col-6 col-lg reveal"><div class="mtd-stub"><span class="sa-date-label">Q4 · Jan–Mar</span><strong>7 May</strong><p>Update covering 6 Jan–5 Apr</p></div></div>
+        <div class="col-12 col-lg reveal"><div class="mtd-stub final"><span class="sa-date-label">Year end</span><strong>31 Jan</strong><p>Final declaration</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT AFFECTS -->
+  <section class="section section-gradient">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Who&rsquo;s affected</span>
+        <h2 class="section-title-lg">Three ways MTD reaches your income</h2>
+        <p class="section-sub">The rules land differently depending on how you earn.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 reveal">
+          <article class="startup-service-card h-100">
+            <div class="svc-visual" aria-hidden="true"><i class="bi bi-person"></i><span class="svc-num">01</span></div>
+            <h3>Self-employed</h3>
+            <p>Sole traders keep digital records and send four quarterly income &amp; expense summaries to HMRC, replacing one annual entry.</p>
+          </article>
+        </div>
+        <div class="col-md-4 reveal">
+          <article class="startup-service-card h-100">
+            <div class="svc-visual" aria-hidden="true"><i class="bi bi-house"></i><span class="svc-num">02</span></div>
+            <h3>Landlords</h3>
+            <p>Rental income and expenses must be tracked digitally and reported quarterly once combined qualifying income passes the threshold.</p>
+          </article>
+        </div>
+        <div class="col-md-4 reveal">
+          <article class="startup-service-card h-100">
+            <div class="svc-visual" aria-hidden="true"><i class="bi bi-building"></i><span class="svc-num">03</span></div>
+            <h3>Limited companies</h3>
+            <p>MTD currently applies through VAT. Corporation Tax is not yet in scope, but digital systems now avoid a scramble when it is.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section section-white" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">How we help</span>
+        <h2 class="section-title-lg">Everything MTD requires, handled end to end</h2>
+        <p class="section-sub">From HMRC registration to the final declaration — we run your compliance for you.</p>
+      </div>
+      <div class="startup-service-grid">
+        <article class="startup-service-card reveal">
+          <div class="svc-visual" aria-hidden="true"><i class="bi bi-clipboard-check"></i><span class="svc-num">01</span></div>
+          <h3>MTD registration</h3>
+          <p>We register you with HMRC for VAT or Income Tax MTD and confirm your exact mandatory start date.</p>
+        </article>
+        <article class="startup-service-card reveal">
+          <div class="svc-visual" aria-hidden="true"><i class="bi bi-laptop"></i><span class="svc-num">02</span></div>
+          <h3>Software setup</h3>
+          <p>Xero, QuickBooks or FreeAgent — configured, connected to your bank, and ready to file on day one.</p>
+        </article>
+        <article class="startup-service-card reveal">
+          <div class="svc-visual" aria-hidden="true"><i class="bi bi-journal-check"></i><span class="svc-num">03</span></div>
+          <h3>Digital bookkeeping</h3>
+          <p>Ongoing, HMRC-compliant record keeping so nothing falls through the cracks between updates.</p>
+        </article>
+        <article class="startup-service-card reveal">
+          <div class="svc-visual" aria-hidden="true"><i class="bi bi-send-check"></i><span class="svc-num">04</span></div>
+          <h3>Quarterly submissions</h3>
+          <p>We prepare and file every quarterly update, checked and reconciled before it reaches HMRC.</p>
+        </article>
+        <article class="startup-service-card reveal">
+          <div class="svc-visual" aria-hidden="true"><i class="bi bi-file-earmark-check"></i><span class="svc-num">05</span></div>
+          <h3>Year-end declarations</h3>
+          <p>Your final declaration, completed and submitted with full visibility of what you owe and when.</p>
+        </article>
+        <article class="startup-service-card reveal">
+          <div class="svc-visual" aria-hidden="true"><i class="bi bi-chat-dots"></i><span class="svc-num">06</span></div>
+          <h3>Ongoing advice</h3>
+          <p>A named accountant on hand for the questions that come up between filings.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="section section-gradient">
+    <div class="container">
+      <div class="startup-proof reveal">
+        <div>
+          <span class="section-eyebrow">Why Dinson</span>
+          <h2 class="section-title-lg">Compliance without the admin headache</h2>
+        </div>
+        <ul class="proof-list">
+          <li><i class="bi bi-person-check-fill"></i><div><strong>One accountant, not a call centre</strong><span>A named person who knows your figures, not a rotating support queue.</span></div></li>
+          <li><i class="bi bi-calendar-check-fill"></i><div><strong>Deadlines tracked automatically</strong><span>We monitor every quarterly date against your specific MTD start.</span></div></li>
+          <li><i class="bi bi-hdd-stack-fill"></i><div><strong>Software included, not upsold</strong><span>MTD-recognised software setup is part of the service.</span></div></li>
+          <li><i class="bi bi-arrow-up-right-circle-fill"></i><div><strong>Built for the next phase too</strong><span>Systems set up now already cover the 2027 and 2028 threshold drops.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-white" id="faq">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 reveal">
+          <span class="section-eyebrow">Common questions</span>
+          <h2 class="section-title-lg">Making Tax Digital, in plain English</h2>
+          <p class="section-sub">Still unsure about thresholds or software? Ask us directly.</p>
+          <a href="contact-us.html" class="btn btn-ghost-dark mt-2">Ask a question</a>
+        </div>
+        <div class="col-lg-8 reveal">
+          <div class="accordion startup-faq" id="faqAccordion">
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">What is Making Tax Digital?</button>
+              </h3>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Making Tax Digital is HMRC&rsquo;s programme requiring digital record-keeping and submissions through approved software, replacing manual and paper-based reporting for VAT and, from April 2026, Income Tax Self Assessment.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Who does Making Tax Digital apply to?</button>
+              </h3>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">It applies to all VAT-registered businesses now, and is phasing in for self-employed people and landlords: above £50,000 qualifying income from April 2026, above £30,000 from April 2027, and above £20,000 from April 2028.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Do I need to buy software for MTD?</button>
+              </h3>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Yes. Records and submissions must run through MTD-recognised software. Spreadsheets alone only qualify when paired with bridging software that files directly with HMRC.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Is Making Tax Digital replacing Self Assessment?</button>
+              </h3>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">No. Self Assessment continues, but for those in scope it is delivered differently — quarterly digital updates through the year, followed by one final declaration instead of a single annual return.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">What happens if I miss an MTD submission?</button>
+              </h3>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Mandated filers get one penalty point per missed quarterly update or final declaration. At 4 points, HMRC issues a £200 fixed penalty, and every further late submission adds another £200. A soft landing means no points for late quarterly updates in your first 12 months of mandation, though the final declaration is not covered.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">Can I be exempt from Making Tax Digital?</button>
+              </h3>
+              <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Exemptions can apply where digital tools are not reasonably usable — due to age, disability, remoteness or religious grounds — or where qualifying income sits at or below £20,000. Some non-resident Self Assessment filers may also qualify. Exemptions must be agreed directly with HMRC.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-white" style="padding-top:0;">
+    <div class="container">
+      <div class="cta-band reveal">
+        <div>
+          <h3>Know your MTD date. Get compliant before it arrives.</h3>
+          <p>Twenty minutes with a Dinson accountant tells you exactly when MTD applies to you and what needs to happen before then.</p>
+        </div>
+        <a href="contact-us.html" class="btn btn-icm">Get In Touch <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <img src="assets/images/footer_logo.png" alt="Dinson & Co." class="footer-logo">
+          <p>Office 11, Renewal Trust Business Centre<br>3 Hawksworth Street, Carlton<br>Nottingham NG3 2EG</p>
+          <div class="social-links mt-3">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <h5>Quick Links</h5>
+          <div class="row">
+            <div class="col-6"><a href="index.html">Home</a><a href="about-us.html">About Us</a><a href="contact-us.html">Contact Us</a><a href="start-up.html">Start-up</a><a href="taxation.html">Taxation</a><a href="payroll.html">Payroll</a></div>
+            <div class="col-6"><a href="carbon-accounting.html">Carbon Accounting</a><a href="book-keeping.html">Book Keeping</a><a href="budgeting.html">Budgeting</a><a href="charities.html">Charities</a><a href="self-assessment.html">Self Assessment</a><a href="making-tax-digital.html">Making Tax Digital</a></div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <h5>Contact Details</h5>
+          <div class="contact-info-item"><img src="assets/images/p_icon.png" alt=""><div><a href="tel:03331237860">0333 123 7860</a><br><a href="tel:07775786123">07775 786 123</a></div></div>
+          <div class="contact-info-item"><img src="assets/images/e_icon.png" alt=""><a href="mailto:info@dinson.co.uk">info@dinson.co.uk</a></div>
+          <div class="contact-info-item"><img src="assets/images/g_icon.png" alt=""><a href="https://dinson.co.uk">www.dinson.co.uk</a></div>
+          <div class="mt-3"><span class="acca-badge">ACCA</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom text-center"><p class="mb-0">&copy; 2026 Dinson &amp; Co. - All Rights Reserved. Designed by <a href="https://webist.uk/">Webist Ltd (UK)</a></p></div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+  (function () {
+    var reveals = document.querySelectorAll('.mtd-page .reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function (el) { io.observe(el); });
+    } else {
+      reveals.forEach(function (el) { el.classList.add('in'); });
+    }
+
+    var slider = document.getElementById('incomeSlider');
+    var incomeValue = document.getElementById('incomeValue');
+    var resultDate = document.getElementById('resultDate');
+    var resultText = document.getElementById('resultText');
+    var toggleBtns = document.querySelectorAll('.mtd-toggle-btn');
+    var status = 'Self-employed';
+
+    function update() {
+      var income = parseInt(slider.value, 10);
+      incomeValue.textContent = income.toLocaleString('en-GB');
+      slider.setAttribute('aria-valuenow', String(income));
+      var who = status === 'Both' ? 'combined self-employment and property income' :
+                status === 'Landlord' ? 'rental income' : 'self-employment income';
+
+      if (income >= 50000) {
+        resultDate.textContent = 'Already in scope';
+        resultText.textContent = 'At £' + income.toLocaleString('en-GB') + ' of ' + who + ', you are above the £50,000 threshold — quarterly digital updates have been mandatory since April 2026.';
+      } else if (income >= 30000) {
+        resultDate.textContent = 'From April 2027';
+        resultText.textContent = 'At £' + income.toLocaleString('en-GB') + ' of ' + who + ', you will be brought into MTD when the threshold drops to £30,000 in April 2027.';
+      } else if (income >= 20000) {
+        resultDate.textContent = 'From April 2028';
+        resultText.textContent = 'At £' + income.toLocaleString('en-GB') + ' of ' + who + ', you will be brought into MTD when the threshold drops to £20,000 in April 2028.';
+      } else {
+        resultDate.textContent = 'Not yet mandatory';
+        resultText.textContent = 'At £' + income.toLocaleString('en-GB') + ' of ' + who + ', you are currently below all announced thresholds. Voluntary sign-up is available if you would like to get ahead.';
+      }
+    }
+
+    if (slider) {
+      slider.addEventListener('input', update);
+      toggleBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          toggleBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          status = btn.getAttribute('data-status');
+          update();
+        });
+      });
+      update();
+    }
+  })();
+  </script>
+</body>
+</html>
