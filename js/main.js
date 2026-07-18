@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
     wa.target = '_blank';
     wa.rel = 'noopener noreferrer';
     wa.setAttribute('aria-label', 'Chat with us on WhatsApp');
-    wa.innerHTML = '<i class="bi bi-whatsapp" aria-hidden="true"></i><span class="whatsapp-float-label">WhatsApp us</span>';
+    wa.innerHTML = '<i class="bi bi-whatsapp" aria-hidden="true"></i>';
     document.body.appendChild(wa);
   }
 });
