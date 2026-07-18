@@ -1,0 +1,33 @@
+# Clean URLs for Netlify (extensionless paths)
+# Force HTTPS-friendly pretty URLs
+
+/about-us.html              /about-us               301
+/book-keeping.html          /book-keeping           301
+/budgeting.html             /budgeting              301
+/carbon-accounting.html     /carbon-accounting      301
+/charities.html             /charities              301
+/cis.html                   /cis                    301
+/consultancy.html           /consultancy            301
+/contact-us.html            /contact-us             301
+/making-tax-digital.html    /making-tax-digital     301
+/payroll.html               /payroll                301
+/self-assessment.html       /self-assessment        301
+/start-up.html              /start-up               301
+/taxation.html              /taxation               301
+/vat.html                   /vat                    301
+/index.html                 /                       301
+
+/about-us                   /about-us.html          200
+/book-keeping               /book-keeping.html      200
+/budgeting                  /budgeting.html         200
+/carbon-accounting          /carbon-accounting.html 200
+/charities                  /charities.html         200
+/cis                        /cis.html               200
+/consultancy                /consultancy.html       200
+/contact-us                 /contact-us.html        200
+/making-tax-digital         /making-tax-digital.html 200
+/payroll                    /payroll.html           200
+/self-assessment            /self-assessment.html   200
+/start-up                   /start-up.html          200
+/taxation                   /taxation.html          200
+/vat                        /vat.html               200
