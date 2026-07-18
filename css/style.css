@@ -1680,6 +1680,9 @@ a.tax-service-card-link h4 {
 .tax-process-section {
   padding-top: 2.5rem;
 }
+.tax-process-section .section-title-lg {
+  max-width: none;
+}
 .tax-process {
   position: relative;
   padding-top: 0.5rem;
@@ -1718,12 +1721,14 @@ a.tax-service-card-link h4 {
   gap: 1.25rem;
   position: relative;
   z-index: 1;
+  align-items: stretch;
 }
 .tax-process-step {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: stretch;
+  text-align: left;
+  height: 100%;
 }
 .tax-process-badge {
   width: 78px;
@@ -1733,6 +1738,7 @@ a.tax-service-card-link h4 {
   align-items: center;
   justify-content: center;
   margin-bottom: 1.15rem;
+  align-self: center;
   position: relative;
   background:
     radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.55), transparent 45%),
@@ -1823,6 +1829,16 @@ a.tax-service-card-link h4 {
 @media (prefers-reduced-motion: reduce) {
   .tax-process-curve-line,
   .tax-process-badge::before { animation: none; }
+}
+
+/* Process path on dark sections (start-up) — curve only; cards stay dark */
+.section-ink-dark .tax-process-curve-bg,
+.section-ink-dark .launch-process-curve .tax-process-curve-bg {
+  stroke: rgba(255, 255, 255, 0.12);
+}
+.section-ink-dark .tax-process-curve-line,
+.section-ink-dark .launch-process-curve .tax-process-curve-line {
+  stroke: var(--theme-color-light);
 }
 
 .tax-faq .accordion-item {
@@ -3983,7 +3999,7 @@ a.tax-service-card-link h4 {
   overflow: hidden;
   background: #0b1220;
   color: #fff;
-  padding: 4.5rem 0 5rem;
+  padding: 4.5rem 0 3rem;
 }
 .startup-hero-bg {
   position: absolute;
@@ -4236,12 +4252,15 @@ a.tax-service-card-link h4 {
 }
 .path-option.tax-service-card {
   width: 100%;
+  height: 100%;
   text-align: left;
   cursor: pointer;
   font-family: inherit;
   color: inherit;
   appearance: none;
   -webkit-appearance: none;
+  display: flex;
+  flex-direction: column;
 }
 .path-option.tax-service-card h4 {
   text-align: left;
@@ -4354,40 +4373,44 @@ a.tax-service-card-link h4 {
   line-height: 1.75;
 }
 
-/* Service cards */
+/* Service cards — match index tax-service-card border */
 .startup-service-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.15rem;
+  align-items: stretch;
 }
 .startup-service-card {
   background: #fff;
-  border: 1px solid var(--border);
+  border-style: solid;
+  border-color: var(--theme-color);
+  border-top-width: 4px;
+  border-left-width: 4px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
   border-radius: var(--radius);
   padding: 1.6rem 1.5rem 1.45rem;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   position: relative;
   overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .startup-service-card::after {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 3px;
-  background: transparent;
-  transition: background var(--transition);
+  content: none;
 }
 .startup-service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow);
-  border-color: rgba(var(--theme-rgb), 0.35);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--theme-color);
 }
 .startup-service-card.is-recommended {
-  border-color: var(--secondary);
-  box-shadow: 0 12px 36px -16px rgba(var(--theme-rgb), 0.45);
+  border-color: var(--theme-color);
+  box-shadow: var(--shadow-lg), 0 0 0 3px rgba(var(--theme-rgb), 0.22);
 }
 .startup-service-card.is-recommended::after {
-  background: var(--gradient-btn);
+  content: none;
 }
 .startup-service-card .svc-visual {
   display: flex;
@@ -4421,6 +4444,7 @@ a.tax-service-card-link h4 {
   color: var(--text-muted);
   margin-bottom: 0.9rem;
   line-height: 1.65;
+  flex: 1;
 }
 .startup-service-card a { color: var(--secondary); font-weight: 600; }
 .svc-points {
@@ -4429,6 +4453,7 @@ a.tax-service-card-link h4 {
   padding: 0;
   display: grid;
   gap: 0.4rem;
+  margin-top: auto;
 }
 .svc-points li {
   font-size: 0.86rem;
@@ -4448,7 +4473,14 @@ a.tax-service-card-link h4 {
   background: var(--secondary);
 }
 
-/* Launch timeline */
+/* Launch timeline — dark cards + connected curve */
+.launch-process {
+  position: relative;
+  padding-top: 0.5rem;
+}
+.launch-process-curve {
+  top: 18px;
+}
 .launch-timeline {
   list-style: none;
   margin: 0;
@@ -4457,22 +4489,20 @@ a.tax-service-card-link h4 {
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   position: relative;
+  z-index: 1;
+  align-items: stretch;
 }
 .launch-timeline::before {
-  content: "";
-  position: absolute;
-  top: 28px;
-  left: 8%;
-  right: 8%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(var(--theme-rgb), 0.55), transparent);
+  display: none;
 }
 .launch-step {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
+  height: 100%;
+  text-align: left;
 }
 .launch-marker {
   width: 56px;
@@ -4485,6 +4515,7 @@ a.tax-service-card-link h4 {
   position: relative;
   z-index: 1;
   backdrop-filter: blur(8px);
+  flex-shrink: 0;
 }
 .launch-marker span {
   font-family: var(--su-display);
@@ -4494,15 +4525,24 @@ a.tax-service-card-link h4 {
 }
 .launch-card {
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-style: solid;
+  border-color: rgba(var(--theme-rgb), 0.55);
+  border-top-width: 4px;
+  border-left-width: 4px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
   border-radius: 14px;
   padding: 1.15rem 1.1rem;
   width: 100%;
-  transition: background 0.3s ease, transform 0.3s ease;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 .launch-card:hover {
   background: rgba(255, 255, 255, 0.1);
   transform: translateY(-4px);
+  border-color: var(--theme-color);
 }
 .launch-card h3 {
   color: #fff;
@@ -4514,6 +4554,7 @@ a.tax-service-card-link h4 {
   font-size: 0.88rem;
   color: rgba(255, 255, 255, 0.65);
   line-height: 1.55;
+  flex: 1;
 }
 
 /* Proof strip */
@@ -4552,6 +4593,45 @@ a.tax-service-card-link h4 {
   line-height: 1.5;
 }
 .proof-list a { color: var(--secondary); font-weight: 600; }
+
+/* About Us — reasons section (full-width, no empty left column) */
+.about-page .about-narrative {
+  padding-bottom: 1.5rem;
+}
+.about-page .about-reasons-section {
+  padding-top: 1.5rem;
+}
+.startup-page .startup-pathfinder-section {
+  padding-top: 2.5rem;
+}
+.about-reasons-head {
+  margin-bottom: 2rem;
+  max-width: 40rem;
+}
+.about-reasons-head .section-title-lg {
+  margin-bottom: 0;
+}
+.about-reasons-head .section-sub {
+  margin-top: 0.75rem;
+}
+#faq .about-reasons-head {
+  max-width: none;
+  margin-bottom: 2rem;
+}
+#faq .about-reasons-head .btn {
+  margin-top: 0.75rem;
+}
+.about-reasons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem 2rem;
+}
+@media (max-width: 767.98px) {
+  .about-reasons-grid {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+}
 
 /* FAQ tweaks */
 .startup-faq .accordion-item {
@@ -4617,7 +4697,7 @@ a.tax-service-card-link h4 {
 }
 
 @media (max-width: 640px) {
-  .startup-hero { padding: 3.25rem 0 3.5rem; }
+  .startup-hero { padding: 3.25rem 0 2rem; }
   .launch-timeline { grid-template-columns: 1fr; }
   .formation-doc { transform: none; }
   .formation-doc-head { padding-right: 0; flex-wrap: wrap; }
