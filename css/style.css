@@ -3978,21 +3978,88 @@ a.tax-service-card-link h4 {
 .carbon-page .frameworks .chip { border:1px solid var(--border); background: var(--off-white); border-radius: 999px; padding:.35rem .65rem; font-size:.73rem; color: var(--text-muted); }
 
 .carbon-page .section-head { margin-bottom: 1.5rem; }
-.carbon-page .section-head h2 { font-size: clamp(1.41rem, 2.34vw, 2.07rem); margin-top:.75rem; margin-bottom:.65rem; }
+.carbon-page .section-head h2 { font-size: clamp(1.41rem, 2.34vw, 2.07rem); margin-top:.75rem; margin-bottom:.65rem; max-width: none; }
 .carbon-page .section-head p { max-width: 62ch; color: var(--text-muted); }
-.carbon-page .intro-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.carbon-page .intro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
 .carbon-page .intro-grid .col p { margin-bottom: .8rem; color: var(--text-muted); }
-.carbon-page .scope-table { width:100%; border-collapse: collapse; border:1px solid var(--border); border-radius: 12px; overflow:hidden; background:#fff; }
-.carbon-page .scope-table th, .carbon-page .scope-table td { border-bottom:1px solid var(--border); padding:.75rem .7rem; text-align:left; font-size:.87rem; }
-.carbon-page .scope-table th { background: var(--off-white); font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color: var(--text-muted); }
-.carbon-page .scope-tag { background: var(--gradient-btn); color:#fff; padding:.18rem .52rem; border-radius:999px; font-size:.68rem; font-weight:700; }
+.carbon-page .scope-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.carbon-page .scope-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+}
+.carbon-page .scope-table th,
+.carbon-page .scope-table td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.9rem 1rem;
+  text-align: left;
+  font-size: 0.9rem;
+  vertical-align: top;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+.carbon-page .scope-table tr:last-child td { border-bottom: none; }
+.carbon-page .scope-table th {
+  background: var(--off-white);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.carbon-page .scope-table th:nth-child(1),
+.carbon-page .scope-table td:nth-child(1) { width: 7.5rem; }
+.carbon-page .scope-table th:nth-child(2),
+.carbon-page .scope-table td:nth-child(2) { width: 32%; }
+.carbon-page .scope-tag {
+  background: var(--gradient-btn);
+  color: #fff;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  display: inline-block;
+  white-space: nowrap;
+}
 
 .carbon-page .section-alt { background: var(--off-white); }
-.carbon-page .process-list { display:grid; grid-template-columns: repeat(4, 1fr); gap:.8rem; }
-.carbon-page .process-card { background:#fff; border:1px solid var(--border); border-radius: 12px; padding: 1rem; }
-.carbon-page .process-card .num { color: var(--secondary); font-family:var(--font-sans); font-weight:800; font-size:1.1rem; }
-.carbon-page .process-card h3 { font-size:.96rem; margin:.35rem 0; }
-.carbon-page .process-card p { font-size:.84rem; color: var(--text-muted); margin:0; }
+.carbon-page .process-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.15rem;
+  align-items: stretch;
+}
+.carbon-page .process-card.tax-service-card {
+  background: #fff;
+  height: 100%;
+  padding: 1.7rem 1.6rem;
+}
+.carbon-page .process-card .num { display: none; }
+.carbon-page .process-card h3,
+.carbon-page .process-card h4 { font-size: 1.05rem; margin: 0 0 0.55rem; font-weight: 700; }
+.carbon-page .process-card p { font-size: 0.92rem; color: var(--text-muted); margin: 0; }
+
+.carbon-page #what-is.section,
+.carbon-page .section-alt.section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
 
 .carbon-page .faq-item { border-bottom:1px solid var(--border); }
 .carbon-page .faq-q { width:100%; border:none; background:none; text-align:left; display:flex; justify-content:space-between; gap:.8rem; padding:1rem 0; font-weight:700; }
@@ -4013,7 +4080,7 @@ a.tax-service-card-link h4 {
 .carbon-page .reveal-delay-3 { transition-delay: .28s; }
 
 @media (max-width: 991px) {
-  .carbon-page .hero-grid, .carbon-page .intro-grid { grid-template-columns: 1fr; }
+  .carbon-page .hero-grid { grid-template-columns: 1fr; }
   .carbon-page .process-list { grid-template-columns: repeat(2,1fr); }
   .carbon-page .related-grid { grid-template-columns: repeat(2,1fr); }
 }
