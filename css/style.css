@@ -5035,9 +5035,28 @@ a.tax-service-card-link h4 {
   background: #fff;
   color: var(--text);
 }
+.startup-faq .accordion-button:focus {
+  box-shadow: none !important;
+  border-color: transparent;
+}
 .startup-faq .accordion-button:not(.collapsed) {
-  background: var(--off-white);
+  background: rgba(var(--theme-rgb), 0.08);
   color: var(--text);
+}
+.startup-faq .accordion-button::after {
+  background-image: none;
+  content: "+";
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--secondary);
+  width: auto;
+  height: auto;
+  transform: none;
+}
+.startup-faq .accordion-button:not(.collapsed)::after {
+  content: "−";
+  transform: none;
+  background-image: none;
 }
 .startup-faq .accordion-body {
   color: var(--text-muted);
