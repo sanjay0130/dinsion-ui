@@ -208,28 +208,78 @@
     </div>
   </header>
 
-  <section class="quick-answer-band">
+  <section class="payroll-promise" aria-labelledby="payrollPromiseTitle">
     <div class="container">
-      <p class="quick-answer"><strong>Payroll Made Simple, Compliance Made Certain<B></strong> 
-        <p>Dinson & Co. delivers fully managed monthly payroll for UK businesses of every size from sole traders with a single employee to growing teams across multiple sites.<p>
-We handle the complexity, so you don't have to: <p>
-- Accurate PAYE & National Insurance calculations, every pay run <p>
-- RTI submissions filed on time, every time on or before each payday, as HMRC requires <p>
-- Workplace pension auto-enrolment managed end-to-end, from assessment to ongoing compliance<p>
-- Payslips delivered securely by email to every employee, without fail</p>
-    </div>
-  </section>
+      <div class="payroll-promise-grid">
+        <div class="payroll-promise-intro reveal">
+          <span class="section-eyebrow">Managed Payroll</span>
+          <h2 id="payrollPromiseTitle">Payroll Made Simple,<br><em>Compliance Made Certain</em></h2>
+          <p class="quick-answer">Dinson &amp; Co. delivers fully managed monthly payroll for UK businesses of every size &mdash; from sole traders with a single employee to growing teams across multiple sites.</p>
+          <p class="payroll-promise-lead">We handle the complexity, so you don&rsquo;t have to. Explore what&rsquo;s covered:</p>
+        </div>
 
-  <div class="payroll-trust">
-    <div class="container">
-      <div class="wrap-flex">
-        <div class="payroll-trust-item"><i class="bi bi-patch-check"></i> ACCA regulated</div>
-        <div class="payroll-trust-item"><i class="bi bi-shield-lock"></i> HMRC recognised payroll software</div>
-        <div class="payroll-trust-item"><i class="bi bi-envelope-paper"></i> Secure emailed payslips</div>
-        <div class="payroll-trust-item"><i class="bi bi-geo-alt"></i> Based in Nottingham, serving UK-wide clients</div>
+        <div class="payroll-promise-list reveal" id="payrollPromiseList">
+          <button type="button" class="payroll-promise-item is-open" aria-expanded="true" data-promise="paye">
+            <span class="ppi-top">
+              <span class="ppi-num">01</span>
+              <span class="ppi-title">Accurate PAYE &amp; National Insurance</span>
+              <i class="bi bi-chevron-down ppi-chevron" aria-hidden="true"></i>
+            </span>
+            <span class="ppi-body">Calculated correctly every pay run &mdash; tax codes, NI thresholds and deductions checked line by line before anyone is paid.</span>
+          </button>
+          <button type="button" class="payroll-promise-item" aria-expanded="false" data-promise="rti">
+            <span class="ppi-top">
+              <span class="ppi-num">02</span>
+              <span class="ppi-title">RTI submissions on time, every time</span>
+              <i class="bi bi-chevron-down ppi-chevron" aria-hidden="true"></i>
+            </span>
+            <span class="ppi-body">Full Payment Submissions filed on or before each payday, as HMRC requires &mdash; so late-filing penalties never land on your desk.</span>
+          </button>
+          <button type="button" class="payroll-promise-item" aria-expanded="false" data-promise="pension">
+            <span class="ppi-top">
+              <span class="ppi-num">03</span>
+              <span class="ppi-title">Workplace pension auto-enrolment</span>
+              <i class="bi bi-chevron-down ppi-chevron" aria-hidden="true"></i>
+            </span>
+            <span class="ppi-body">Managed end-to-end: eligibility assessment, enrolment, contributions and ongoing compliance every pay period.</span>
+          </button>
+          <button type="button" class="payroll-promise-item" aria-expanded="false" data-promise="payslips">
+            <span class="ppi-top">
+              <span class="ppi-num">04</span>
+              <span class="ppi-title">Payslips delivered securely</span>
+              <i class="bi bi-chevron-down ppi-chevron" aria-hidden="true"></i>
+            </span>
+            <span class="ppi-body">Issued by secure email to every employee on or before payday &mdash; no printing, no chasing, no missed slips.</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="payroll-trust-board reveal">
+        <p class="payroll-trust-label">Why clients stay with us</p>
+        <div class="payroll-trust-tabs" role="tablist" aria-label="Payroll credentials">
+          <button type="button" class="payroll-trust-tab is-active" role="tab" aria-selected="true" aria-controls="payrollTrustPanel" id="trustTabAcca" data-trust="acca">
+            <i class="bi bi-patch-check" aria-hidden="true"></i>
+            <span>ACCA regulated</span>
+          </button>
+          <button type="button" class="payroll-trust-tab" role="tab" aria-selected="false" aria-controls="payrollTrustPanel" id="trustTabHmrc" data-trust="hmrc">
+            <i class="bi bi-shield-lock" aria-hidden="true"></i>
+            <span>HMRC recognised software</span>
+          </button>
+          <button type="button" class="payroll-trust-tab" role="tab" aria-selected="false" aria-controls="payrollTrustPanel" id="trustTabPayslips" data-trust="payslips">
+            <i class="bi bi-envelope-paper" aria-hidden="true"></i>
+            <span>Secure emailed payslips</span>
+          </button>
+          <button type="button" class="payroll-trust-tab" role="tab" aria-selected="false" aria-controls="payrollTrustPanel" id="trustTabUk" data-trust="uk">
+            <i class="bi bi-geo-alt" aria-hidden="true"></i>
+            <span>Nottingham, UK-wide</span>
+          </button>
+        </div>
+        <div class="payroll-trust-panel" role="tabpanel" id="payrollTrustPanel" aria-labelledby="trustTabAcca">
+          <p id="payrollTrustCopy">You work with a Chartered Certified practice &mdash; professional standards, indemnity cover and clear accountability on every pay run.</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- PAYROLL CYCLE -->
   <section class="section section-ink-dark" id="cycle">
@@ -531,78 +581,137 @@ We handle the complexity, so you don't have to: <p>
   </section>
 
   <footer class="footer">
-    <div class="container">
-      <div class="footer-cta">
-        <div class="footer-cta-copy">
-          <span class="footer-eyebrow">Dinson &amp; Co.</span>
-          <h2>Numbers that make sense. Advice you can act on.</h2>
-          <p>ACCA Chartered Certified Accountants in Nottingham — helping businesses and individuals stay compliant and plan ahead.</p>
-        </div>
-        <div class="footer-cta-actions">
-          <a href="contact-us" class="btn btn-icm">Get In Touch <i class="bi bi-arrow-right"></i></a>
-          <a href="tel:03331237860" class="footer-cta-phone"><i class="bi bi-telephone"></i> 0333 123 7860</a>
-        </div>
-      </div>
-
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="assets/images/footer_logo.png" alt="Dinson &amp; Co." class="footer-logo">
-          <p class="footer-address">Office 11, Renewal Trust Business Centre<br>3 Hawksworth Street, Carlton<br>Nottingham NG3 2EG</p>
-          <div class="footer-hours"><span class="footer-hours-dot"></span> Mon–Fri · 09:00–17:30</div>
-        </div>
-
-        <nav class="footer-nav" aria-label="Company">
-          <h3>Company</h3>
-          <a href="index.html">Home</a>
-          <a href="about-us">About Us</a>
-          <a href="contact-us">Contact Us</a>
-          <a href="self-assessment">Self Assessment</a>
-          <a href="making-tax-digital">Making Tax Digital</a>
-        </nav>
-
-        <nav class="footer-nav" aria-label="Services">
-          <h3>Services</h3>
-          <div class="footer-nav-split">
-            <div>
-              <a href="start-up">Start-up</a>
-              <a href="taxation">Taxation</a>
-              <a href="payroll">Payroll</a>
-              <a href="book-keeping">Book Keeping</a>
-            </div>
-            <div>
-              <a href="budgeting">Budgeting</a>
-              <a href="charities">Charities</a>
-              <a href="carbon-accounting">Carbon Accounting</a>
-            </div>
-          </div>
-        </nav>
-
-        <div class="footer-contact">
-          <h3>Contact</h3>
-          <a class="footer-contact-row" href="tel:03331237860"><i class="bi bi-telephone"></i><span>0333 123 7860</span></a>
-          <a class="footer-contact-row" href="tel:07775786123"><i class="bi bi-phone"></i><span>07775 786 123</span></a>
-          <a class="footer-contact-row" href="mailto:info@dinson.co.uk"><i class="bi bi-envelope"></i><span>info@dinson.co.uk</span></a>
-          <a class="footer-contact-row" href="https://dinson.co.uk" target="_blank" rel="noopener"><i class="bi bi-globe2"></i><span>www.dinson.co.uk</span></a>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/footer_logo.png" alt="Dinson &amp; Co." class="footer-logo">
+        <p class="footer-legal">DINSON &amp; Co is the trading name of DINSON Accountants Limited (Company Registration 12660555 Eng &amp; Wales)<br>
+          VAT No. 455396952<br>
+          Regulated by the Association of Chartered Certified Accountants, United Kingdom</p>
+        <img src="assets/images/acca.webp" alt="Regulated by ACCA" class="footer-acca-img">
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 Dinson &amp; Co. All rights reserved.</p>
-        <div class="footer-bottom-right">
-          <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <nav class="footer-nav" aria-label="Quick Links">
+        <h3>Quick Links</h3>
+        <div class="footer-nav-split">
+          <div>
+            <a href="index.html">Home</a>
+            <a href="about-us">About Us</a>
+            <a href="start-up">Start-up</a>
+            <a href="taxation">Taxation</a>
+            <a href="payroll">Payroll</a>
+            <a href="carbon-accounting">Carbon Accounting</a>
           </div>
-          <span class="acca-badge">ACCA</span>
+          <div>
+            <a href="book-keeping">Book Keeping</a>
+            <a href="budgeting">Budgeting</a>
+            <a href="charities">Charities</a>
+            <a href="self-assessment">Self Assessment</a>
+            <a href="making-tax-digital">Making Tax Digital</a>
+            <a href="contact-us">Contact Us</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="footer-contact">
+        <h3>Contact Details</h3>
+        <a class="footer-contact-row" href="tel:03331237860">
+          <span class="footer-ico" aria-hidden="true"><i class="bi bi-telephone"></i></span>
+          <span class="footer-contact-text">
+            <span class="footer-contact-label">Phone</span>
+            <span class="footer-contact-value">0333 123 7860</span>
+          </span>
+        </a>
+        <a class="footer-contact-row" href="tel:07775786123">
+          <span class="footer-ico" aria-hidden="true"><i class="bi bi-phone"></i></span>
+          <span class="footer-contact-text">
+            <span class="footer-contact-label">Mobile</span>
+            <span class="footer-contact-value">07775 786 123</span>
+          </span>
+        </a>
+        <a class="footer-contact-row" href="mailto:info@dinson.co.uk">
+          <span class="footer-ico" aria-hidden="true"><i class="bi bi-envelope"></i></span>
+          <span class="footer-contact-text">
+            <span class="footer-contact-label">Email</span>
+            <span class="footer-contact-value">info@dinson.co.uk</span>
+          </span>
+        </a>
+        <a class="footer-contact-row" href="contact-us">
+          <span class="footer-ico" aria-hidden="true"><i class="bi bi-geo-alt"></i></span>
+          <span class="footer-contact-text">
+            <span class="footer-contact-label">Address</span>
+            <span class="footer-contact-value">Office 11, Renewal Trust Business Centre<br>3 Hawksworth Street, Carlton<br>Nottingham NG3 2EG</span>
+          </span>
+        </a>
+        <div class="footer-contact-row footer-contact-row--static">
+          <span class="footer-ico" aria-hidden="true"><i class="bi bi-receipt"></i></span>
+          <span class="footer-contact-text">
+            <span class="footer-contact-label">VAT Registration No.</span>
+            <span class="footer-contact-value">455396952</span>
+          </span>
         </div>
       </div>
     </div>
-  </footer>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Dinson &amp; Co. - All Rights Reserved.</p>
+      <span class="acca-badge">ACCA Regulated</span>
+    </div>
+  </div>
+</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
   <script>
+    // Promise accordion
+    document.querySelectorAll('.payroll-promise-item').forEach(function (item) {
+      item.addEventListener('click', function () {
+        var isOpen = item.classList.contains('is-open');
+        document.querySelectorAll('.payroll-promise-item').forEach(function (other) {
+          other.classList.remove('is-open');
+          other.setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('is-open');
+          item.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Trust credential tabs
+    var trustCopy = {
+      acca: 'You work with a Chartered Certified practice — professional standards, indemnity cover and clear accountability on every pay run.',
+      hmrc: 'Payroll runs through HMRC-recognised software, so RTI submissions go through the channels HMRC expects — clean filings, fewer queries.',
+      payslips: 'Every payslip is delivered securely by email on or before payday, so employees get a clear record without paper chasing.',
+      uk: 'Based in Nottingham and serving clients across the UK — local partnership with the reach to support multi-site teams.'
+    };
+    var trustPanel = document.getElementById('payrollTrustPanel');
+    var trustCopyEl = document.getElementById('payrollTrustCopy');
+    document.querySelectorAll('.payroll-trust-tab').forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        document.querySelectorAll('.payroll-trust-tab').forEach(function (t) {
+          t.classList.remove('is-active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('is-active');
+        tab.setAttribute('aria-selected', 'true');
+        if (trustPanel) trustPanel.setAttribute('aria-labelledby', tab.id);
+        if (trustCopyEl) {
+          var next = document.createElement('p');
+          next.id = 'payrollTrustCopy';
+          next.textContent = trustCopy[tab.dataset.trust] || '';
+          trustCopyEl.replaceWith(next);
+          trustCopyEl = next;
+        }
+      });
+    });
+
     // Service filter tabs
     var tabBtns = document.querySelectorAll('.payroll-tab');
     var cards = document.querySelectorAll('.payroll-service-card');
